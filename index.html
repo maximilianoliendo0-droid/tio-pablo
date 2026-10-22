@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7654e8">
+<title>Tío Pablo | Salón de eventos</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#fff9f0;color:#25234b}
+header{padding:25px 20px 30px;background:linear-gradient(145deg,#c9f5ed,#fff0c5,#ffd5e5);border-radius:0 0 32px 32px;text-align:center}
+.logo{font-size:42px;font-weight:1000;letter-spacing:-2px;color:#7350df;text-shadow:2px 3px white}
+.logo span:nth-child(2){color:#ff5688}
+.logo span:nth-child(3){color:#00a995}
+h1{font-size:27px;line-height:1.2;margin:12px 0}
+p{line-height:1.5}
+button,.btn{border:0;border-radius:18px;padding:14px 18px;font-weight:800;font-size:15px;cursor:pointer}
+.primary{background:#fa4f88;color:white;box-shadow:0 5px 0 #d92c6a}
+section{padding:22px 17px}
+h2{font-size:22px;margin:0 0 14px}
+.sub{color:#706d87;font-size:14px}
+.cards{display:grid;gap:13px}
+.card{padding:17px;border-radius:23px;background:white;box-shadow:0 5px 20px #37305b12;border:2px solid #f1eafa}
+.card:nth-child(1){background:#ffe3ed}
+.card:nth-child(2){background:#d9f8f1}
+.card:nth-child(3){background:#e8e0ff}
+.emoji{font-size:35px}
+.card h3{margin:5px 0}
+ul{padding-left:20px;font-size:14px;line-height:1.9}
+.pill{display:inline-block;background:white;border-radius:20px;padding:6px 11px;font-size:12px;font-weight:800}
+label{display:block;font-size:14px;font-weight:750;margin:13px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #ddd5ed;border-radius:13px;background:white;font:inherit}
+nav{position:sticky;bottom:0;background:white;display:flex;justify-content:space-around;padding:10px 2px;border-top:1px solid #eee;box-shadow:0 -5px 20px #30235b10}
+nav button{background:white;color:#62548c;padding:8px 10px;font-size:12px}
+nav button:focus{color:#ed4781}
+.panel{display:none}
+.panel.active{display:block}
+.info{background:#e2f8f1;padding:15px;border-radius:18px}
+footer{text-align:center;padding:25px;background:#ece5ff;border-radius:25px 25px 0 0}
+a{color:#6445d5}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><span>TÍO</span> <span>PA</span><span>BLO</span> 🎈</div>
+<div class="pill">✨ SALÓN DE EVENTOS ✨</div>
+<h1>Vos disfrutá cada momento.<br>¡Nosotros nos ocupamos!</h1>
+<p>Te acompañamos y asesoramos en cada detalle para que el cumple sea inolvidable.</p>
+<button class="primary" onclick="show('planes')">🎉 Descubrir nuestros planes</button>
+<p>🎈 🧸 🎂 🌈 🎁</p>
+</header>
+
+<div id="inicio" class="panel active">
+<section>
+<h2>🎊 ¡Un cumple lleno de magia!</h2>
+<p class="sub">Un espacio para jugar, reír y crear recuerdos hermosos.</p>
+<div class="info">💖 Nos encargamos de la organización y los detalles. Vos compartí el momento con quienes más querés.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Ramiro+Suarez+1459%2C+Villa+Maria%2C+Cordoba%2C+Argentina" target="_blank">📍 Ramiro Suárez 1459 · Ver en Google Maps</a></p>
+<p><a href="https://wa.me/5492657223120" target="_blank">💬 Consultanos por WhatsApp</a></p>
+</section>
+</div>
+
+<div id="planes" class="panel">
+<section>
+<h2>🎂 Nuestros planes</h2>
+<p class="sub">Elegí el que mejor se adapte a tu festejo.</p>
+<div class="cards">
+<div class="card"><div class="emoji">🎈</div><h3>Mini Fiesta</h3><p>Un festejo simple, alegre y especial.</p><ul><li>Uso del salón por 3 horas</li><li>Mesas y sillas</li><li>Espacio para la torta</li><li>Limpieza final</li></ul><b>Precio: consultar</b></div>
+<div class="card"><div class="emoji">🎂</div><h3>Gran Fiesta</h3><p>Más detalles para disfrutar sin preocupaciones.</p><ul><li>Todo lo del plan Mini</li><li>Decoración temática básica</li><li>Sector para fotos</li><li>Opcionales personalizados</li></ul><b>Precio: consultar</b></div>
+<div class="card"><div class="emoji">👑</div><h3>Fiesta Premium</h3><p>Una experiencia especial y personalizada.</p><ul><li>Todo lo del plan Gran Fiesta</li><li>Ambientación especial</li><li>Personalización del evento</li><li>Coordinación de detalles</li></ul><b>Precio: consultar</b></div>
+</div>
+<button class="primary" onclick="show('reserva')" style="width:100%;margin-top:18px">📅 Consultar fecha</button>
+</section>
+</div>
+
+<div id="reserva" class="panel">
+<section>
+<h2>📅 Consultá tu fecha</h2>
+<p class="sub">Tu solicitud no queda confirmada hasta que nosotros te respondamos.</p>
+<form id="booking">
+<label>Nombre del adulto responsable</label><input name="nombre" required placeholder="Tu nombre">
+<label>WhatsApp de contacto</label><input name="telefono" required type="tel" placeholder="Tu teléfono">
+<label>Nombre del cumpleañero/a</label><input name="cumple" required placeholder="Nombre">
+<label>Fecha deseada</label><input name="fecha" type="date" required>
+<label>Horario</label><select name="horario"><option>10:00 a 13:00</option><option>15:00 a 18:00</option><option>19:00 a 22:00</option></select>
+<label>Plan de interés</label><select name="plan"><option>Mini Fiesta</option><option>Gran Fiesta</option><option>Fiesta Premium</option></select>
+<label>Cantidad estimada de niños</label><input name="ninos" type="number" min="0" max="30" value="10">
+<label>Cantidad estimada de adultos</label><input name="adultos" type="number" min="0" value="15">
+<label>Extras o comentarios</label><textarea name="extras" rows="3" placeholder="Decoración, mesa dulce, animación..."></textarea>
+<button class="primary" type="submit" style="width:100%;margin-top:18px">Enviar consulta por WhatsApp</button>
+</form>
+</section>
+</div>
+
+<div id="invitacion" class="panel">
+<section>
+<h2>💌 Invitación digital</h2>
+<div class="card" style="text-align:center;background:linear-gradient(145deg,#ffe0ed,#e0f9f2,#eee5ff)">
+<div class="emoji">🎈 🦁 🎉</div><h1>¡Estás invitado!</h1>
+<p>Venite a celebrar un día lleno de alegría y diversión.</p>
+<label>Nombre del cumpleañero/a</label><input id="invNombre" placeholder="Ej. Martina">
+<label>Edad que cumple</label><input id="invEdad" type="number" placeholder="Ej. 7">
+<label>Fecha del festejo</label><input id="invFecha" type="date">
+<label>Horario</label><input id="invHora" placeholder="Ej. 16 a 19 h">
+<button class="primary" onclick="crearInvitacion()">Crear vista previa</button>
+<div id="preview" style="margin-top:15px"></div>
+</div>
+<p class="sub">Esta es una demostración: todavía no crea enlaces únicos ni guarda respuestas en la nube.</p>
+</section>
+</div>
+
+<div id="admin" class="panel">
+<section>
+<h2>🔐 Panel de organización</h2>
+<p class="sub">Demo local para organizar preparativos. Aún no tiene acceso privado ni sincronización en la nube.</p>
+<div class="card">
+<h3>🛒 Compras generales de los lunes</h3>
+<div id="compras">
+<label><input type="checkbox" style="width:auto"> Gaseosas y agua</label>
+<label><input type="checkbox" style="width:auto"> Snacks y golosinas</label>
+<label><input type="checkbox" style="width:auto"> Vasos, platos y servilletas</label>
+<label><input type="checkbox" style="width:auto"> Productos de limpieza</label>
+<label><input type="checkbox" style="width:auto"> Velas y encendedor</label>
+<label><input type="checkbox" style="width:auto"> Materiales para mesa dulce</label>
+</div>
+</div>
+<div class="card">
+<h3>🎉 Preparación del evento</h3>
+<label>Evento</label><input id="evento" placeholder="Cumple de...">
+<label>Niños confirmados</label><input type="number" min="0" max="30" value="0">
+<label>Adultos estimados</label><input type="number" min="0" value="0">
+<div id="tareas">
+<label><input type="checkbox" style="width:auto"> Revisar limpieza</label>
+<label><input type="checkbox" style="width:auto"> Preparar decoración</label>
+<label><input type="checkbox" style="width:auto"> Revisar bebidas e insumos</label>
+<label><input type="checkbox" style="width:auto"> Preparar mesa dulce</label>
+<label><input type="checkbox" style="width:auto"> Verificar horario y detalles</label>
+</div>
+</div>
+</section>
+</div>
+
+<nav>
+<button onclick="show('inicio')">🏠<br>Inicio</button>
+<button onclick="show('planes')">🎂<br>Planes</button>
+<button onclick="show('reserva')">📅<br>Reservar</button>
+<button onclick="show('invitacion')">💌<br>Invitación</button>
+<button onclick="show('admin')">🧸<br>Mi panel</button>
+</nav>
+
+<footer><h2>💖 TÍO PABLO</h2><p>Te acompañamos, te asesoramos y nos encargamos de los detalles.</p><p>📍 Ramiro Suárez 1459 · Villa María, Córdoba</p></footer>
+
+<script>
+function show(id){
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('booking').addEventListener('submit',function(e){
+e.preventDefault();
+const d=Object.fromEntries(new FormData(this).entries());
+const msg=`Hola Tío Pablo! Quiero consultar una fecha.%0AAdulto: ${d.nombre}%0AWhatsApp: ${d.telefono}%0ACumpleañero/a: ${d.cumple}%0AFecha: ${d.fecha}%0AHorario: ${d.horario}%0APlan: ${d.plan}%0ANiños: ${d.ninos}%0AAdultos: ${d.adultos}%0AExtras: ${d.extras}`;
+window.open('https://wa.me/5492657223120?text='+msg,'_blank');
+});
+function crearInvitacion(){
+const n=document.getElementById('invNombre').value||'¡Te esperamos!';
+const e=document.getElementById('invEdad').value;
+const f=document.getElementById('invFecha').value;
+const h=document.getElementById('invHora').value;
+document.getElementById('preview').innerHTML=`<h2>¡Cumple de ${n}!</h2><p>${e?'¡Cumplo '+e+' años!':''}</p><p>📅 ${f||'Fecha a confirmar'}</p><p>🕒 ${h||'Horario a confirmar'}</p><p>🎈 ¡Te espero para festejar!</p>`;
+}
+</script>
+</body>
+                                              </html>
+                                              
